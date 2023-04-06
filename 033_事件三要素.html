@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">唐伯虎</button>
+<div>123</div>
+<script>
+    //点击一个按钮，弹出对话框
+    //1.事件是有三部分组成 事件源 事件类型 事件处理程序 也称为事件三要素
+    //(1) 事件源 事件被触发的对象谁 按钮
+    var btn = document.getElementById('btn');
+    //(2) 事件类型 如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下
+    //(3) 事件处理程序 通过一个函数赋值的方式 完成
+    btn.onclick = function () {
+        alert('秋香');
+    }
+
+    //执行事件步骤
+    //点击div 控制台输出 我被选中了
+    //1．获取事件源
+    var div = document.querySelector('div');
+    //2.绑定事件 注册事件 div.onclick
+    //3.添加事件处理程序
+    div.onclick = function () {
+        console.log('已被选中');
+    }
+
+    //常见的鼠标事件
+    // onclick()--鼠标左击
+    // onmouseover()--鼠标经过
+    // onmouseout()--鼠标离开
+    // onfocus()--获得鼠标焦点
+    // onblur()--失去鼠标焦点
+    // onmousemove()--鼠标移动
+    // onmouseup()--鼠标弹起
+    // onmousedown()--鼠标按下
+</script>
+</body>
+</html>

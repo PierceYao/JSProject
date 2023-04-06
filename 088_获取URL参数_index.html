@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>首页</div>
+<div class="inner"></div>
+<script>
+    var div = document.querySelector('.inner');
+    var name = decodeURIComponent(location.search.substring(10,));
+    div.innerHTML = name + '，欢迎你！';
+</script>
+</body>
+</html>

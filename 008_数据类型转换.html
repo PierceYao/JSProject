@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //转换为字符串
+        var num = 1;
+        console.log(typeof num.toString());
+        console.log(typeof String(num));
+        console.log(typeof ('我是字符串' + num));
+
+        //转换为数字型
+        //1.parseInt()--变成数字整型
+        var ageString = prompt('请输入你的年龄：');
+        console.log(parseInt(ageString));
+
+        console.log(parseInt('3.14'));//3
+        console.log(parseInt('3.94'));//3
+        console.log(parseInt('120px'));//120
+        console.log(parseInt('rem120px'));//NaN
+
+        //2.parseFloat()--变成数字浮点型
+        var priceString = prompt('请输入菜的价格：');
+        console.log(parseFloat(priceString));
+
+        console.log(parseFloat('3.94'));//3.94
+        console.log(parseFloat('120px'));//120
+        console.log(parseFloat('rem120px'));//NaN
+
+        //3.Number()
+        var str = '12';
+        console.log(Number(str));
+
+        //4.利用算术运算 - * /
+        console.log(str - 0);
+        console.log(str - '10');
+        console.log(str / 3);
+        console.log(str * 4);
+
+        //转换为布尔型--代表空、否定的值会被转换为false，如'',0,NaN,null,undefined
+        console.log(Boolean('小白'));
+        console.log(Boolean(12));
+        console.log(Boolean(''));
+        console.log(Boolean(0));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

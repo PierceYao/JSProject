@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getArrayMax(arr) {
+            var max = arr[0];
+            for (var i = 0; i < arr.length; i++) {
+                if (max <= arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;//return返回一个值；如果没有return，则返回undefined
+            alert('该行代码不会被执行');//return后面的代码不会被执行
+        }
+
+        var re = getArrayMax([2, 6, 1, 77, 52, 25, 7]);
+        console.log(re);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

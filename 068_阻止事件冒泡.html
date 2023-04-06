@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: purple;
+        }
+
+        .son {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script>
+    // e.stopPropagation()--阻止冒泡--标准
+    // e.cancelBubble--阻止冒泡--非标准，IE6-8使用
+    var son = document.querySelector('.son');
+    son.addEventListener('click', function (evt) {
+        alert('son');
+        if (evt && evt.stopPropagation) {
+            evt.stopPropagation();
+        } else {
+            window.event.cancelBubble = true;
+        }
+    });
+    var father = document.querySelector('.father');
+    father.addEventListener('click', function (evt) {
+        alert('father');
+    });
+    document.addEventListener('click', function (evt) {
+        alert('document');
+    });
+</script>
+</body>
+</html>

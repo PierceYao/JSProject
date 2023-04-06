@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //onkeyup--某个按键被松开时触发
+    document.addEventListener('keyup', function (evt) {
+        console.log(evt.type);
+    })
+    //onkeydown--某个按键被按下时触发
+    document.addEventListener('keydown', function (evt) {
+        console.log(evt.type);
+    })
+    //onkeypress--某个按键被按下时触发，但它不识别功能键，如ctrl、shift、箭头
+    document.addEventListener('keypress', function (evt) {
+        console.log(evt.type);
+    })
+</script>
+</body>
+</html>

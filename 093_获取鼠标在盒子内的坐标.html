@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.querySelector('div');
+    div.addEventListener('mousemove', function (evt) {
+        var x = evt.pageX - this.offsetLeft;
+        var y = evt.pageY - this.offsetTop;
+        this.innerHTML = '(' + x + ',' + y + ')';
+    });
+</script>
+</body>
+</html>

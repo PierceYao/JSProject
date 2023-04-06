@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 40px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="images/mouse.jpg" alt="">
+<script>
+    var img = document.querySelector('img');
+    img.addEventListener('mousemove', function (evt) {
+        var x = evt.pageX;
+        var y = evt.pageY;
+        img.style.left = x - 20 + 'px';
+        img.style.top = y - 20 + 'px';
+    })
+</script>
+</body>
+</html>

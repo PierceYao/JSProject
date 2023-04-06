@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 500px;
+            height: 150px;
+            text-align: center;
+            font-size: 12px;
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+
+        thead {
+            width: 500px;
+            height: 40px;
+            background-color: #eee;
+        }
+
+        table, tr, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>科目</th>
+        <th>成绩</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script>
+    var data = [
+        {
+            name: '魏璎珞',
+            major: 'JavaScript',
+            score: '100'
+        },
+        {
+            name: '弘历',
+            major: 'JavaScript',
+            score: '90'
+        },
+        {
+            name: '傅恒',
+            major: 'JavaScript',
+            score: '99'
+        },
+        {
+            name: '明玉',
+            major: 'JavaScript',
+            score: '89'
+        }
+    ];
+    var tbody = document.querySelector('tbody');
+    for (var i = 0; i < data.length; i++) {
+        var trs = document.createElement('tr');
+        tbody.appendChild(trs);
+
+        for (var key in data[i]) {
+            var td = document.createElement('td');
+            trs.appendChild(td);
+            td.innerHTML = data[i][key];
+        }
+
+        var deleteTd = document.createElement('td');
+        deleteTd.innerHTML = '<a href="javascript:;">删除</a>';
+        trs.appendChild(deleteTd);
+    }
+
+    var as = document.querySelectorAll('a');
+    for (var i = 0; i < as.length; i++) {
+        as[i].onclick = function () {
+            tbody.removeChild(this.parentNode.parentNode);
+        }
+    }
+</script>
+</body>
+</html>

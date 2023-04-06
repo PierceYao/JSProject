@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    var divs = document.querySelectorAll('div');
+    //传统注册方式
+    divs[0].onclick = function () {
+        alert('hi!');
+        divs[0].onclick = null;
+    }
+
+    //addEventListener注册方式
+    divs[1].addEventListener('click', alertHello);
+
+    function alertHello() {
+        alert('hello!');
+        divs[1].removeEventListener('click', alertHello);
+    }
+
+    //attachEvent注册方式
+    divs[2].attachEvent('onclick', alertGreeting);
+
+    function alertGreeting() {
+        alert('nice to meet you!');
+        divs[2].detachEvent('onclick', alertGreeting);
+    }
+</script>
+</body>
+</html>

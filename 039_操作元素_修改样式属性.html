@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .change {
+            background-color: purple;
+            font-size: 26px;
+            font-weight: bolder;
+            color: #00a4ff;
+        }
+    </style>
+</head>
+<body>
+<div>文本</div>
+<script>
+    var div = document.querySelector('div');
+    div.onclick = function () {
+        //1.使用element.style来修改样式
+        this.style.backgroundColor = 'green';
+        this.style.width = '500px';
+
+        //2.使用className修改样式属性
+        this.className = 'change';
+    }
+</script>
+</body>
+</html>

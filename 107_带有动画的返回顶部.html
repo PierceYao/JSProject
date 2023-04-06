@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            width: 45px;
+            height: 130px;
+            background-color: rgb(169, 170, 94);
+            margin-left: 600px;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            /* width: 1200px; */
+            height: 150px;
+            background-color: rgb(33, 66, 88);
+        }
+
+        .banner {
+            /* width: 1200px;           */
+            height: 250px;
+            background-color: rgb(83, 121, 72);
+        }
+
+        .main {
+            /* width: 1200px; */
+            height: 1000px;
+            background-color: rgb(151, 114, 114);
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="slider-bar">
+    <span class="goBack">返回顶部</span>
+</div>
+<div class="header w">头部区域</div>
+<div class="banner w">banner区域</div>
+<div class="main w">主体部分</div>
+<script>
+    var sliderBar = document.querySelector('.slider-bar');
+    var banner = document.querySelector('.banner');
+    var main = document.querySelector('.main');
+    var goBack = document.querySelector('.goBack');
+    var bannerTop = banner.offsetTop;
+    var mainTop = main.offsetTop;
+    var sliderBarTop = sliderBar.offsetTop - bannerTop;
+    document.addEventListener('scroll', function () {
+        if (window.scrollY >= bannerTop) {
+            sliderBar.style.position = 'fixed';
+            sliderBar.style.top = sliderBarTop + 'px';
+        } else {
+            sliderBar.style.position = 'absolute';
+            sliderBar.style.top = 300 + 'px';
+        }
+
+        if (window.scrollY >= mainTop) {
+            goBack.style.display = 'inline';
+        } else {
+            goBack.style.display = 'none';
+        }
+    });
+    goBack.addEventListener('click', function () {
+        // window.scroll(0, 0);
+        animate(window, 0);
+    })
+
+    function animate(obj, target, callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var step = (target - obj.scrollY) / 10;
+            step = step >= 0 ? Math.ceil(step) : Math.floor(step);
+            if (obj.scrollY === target) {
+                clearInterval(obj.timer);
+                callback && callback();
+            } else {
+                window.scroll(0, obj.scrollY + step);
+                // obj.style.top = obj.scrollY + step + 'px';
+            }
+        }, 10);
+    }
+</script>
+</body>
+</html>

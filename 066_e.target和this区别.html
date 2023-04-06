@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>123</div>
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+<script>
+    //事件对象的常见属性和方法
+    // e.target--返回触发事件的对象--标准   this--返回绑定事件的对象
+    // e.srcElement--返回触发事件的对象--非标准，IE6-8使用
+    var div = document.querySelector('div');
+    div.addEventListener('click', function (evt) {
+        console.log(evt.target);
+        console.log(this);
+    });
+
+    var ul = document.querySelector('ul');
+    ul.addEventListener('click', function (evt) {
+        console.log(evt.target);
+        console.log(this);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //伪数组不是真正意义上的数组
+        //1.具有数组的length属性
+        //2.按照索引的方式进行存储的
+        //3.没有真正数组的一些方法，如pop(),push()等
+        function fn() {
+            console.log(arguments);//里面存储了所有传过来的实参
+            console.log(arguments.length);
+            console.log(arguments[2]);
+
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+
+        fn(1, 2, 3);
+
+        // 求任意个数的最大值
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max <= arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+
+        console.log(getMax(2, 6, 1, 77, 52, 25, 7));
+
+        //翻转数组
+        function reverseArray(arr) {
+            var temp;
+            for (var i = 0; i < arr.length / 2; i++) {
+                temp = arr[i];
+                arr[i] = arr[arr.length - i - 1];
+                arr[arr.length - i - 1] = temp;
+            }
+            return arr;
+        }
+
+        console.log(reverseArray(['red', 'green', 'blue', 'pink', 'purple', 'yellow']));
+
+        //冒泡排序
+        function bubbleSort(arr) {
+            var temp;
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        console.log(bubbleSort([2, 6, 1, 77, 52, 25, 7]));
+
+        //判断是否是闰年
+        function isLeapYear(year) {
+            var flag = true;
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                return flag;
+            } else {
+                return !flag;
+            }
+        }
+
+        console.log(isLeapYear(2022));
+
+        //输出二月份天数
+        function getFebruaryDays(year) {
+            var isTrue = isLeapYear(year);
+            if (isTrue) {
+                var days = 29;
+            } else {
+                days = 28;
+            }
+            return days;
+        }
+
+        console.log(getFebruaryDays(2020));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

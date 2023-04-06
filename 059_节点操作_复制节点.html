@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var ul = document.querySelector('ul');
+    var cloneNode = ul.children[0].cloneNode();//括号为空或者false，浅拷贝，不复制内容；括号为true，深拷贝，复制内容
+    ul.appendChild(cloneNode);
+    ul.insertBefore(cloneNode, ul.children[0]);
+</script>
+</body>
+</html>

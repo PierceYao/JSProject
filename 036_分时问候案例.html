@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/早安.jpg" alt="" id="timeDiv">
+<div id="greeting">上午好</div>
+<script>
+    var timeDiv = document.getElementById('timeDiv');
+    var greeting = document.getElementById('greeting');
+    var time = new Date();
+    var hour = time.getHours();
+    if (hour <= 14) {
+        greeting.innerText = '上午好';
+        timeDiv.src = 'images/早安.jpg';
+    } else if (hour > 14 && hour <= 18) {
+        greeting.innerText = '下午好';
+        timeDiv.src = 'images/中午好.png';
+    } else {
+        greeting.innerText = '晚上好';
+        timeDiv.src = 'images/晚上.png';
+    }
+</script>
+</body>
+</html>

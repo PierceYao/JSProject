@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr1 = new Array();//创建一个空数组
+        var arr16 = new Array(2);//创建一个长度为2的空数组
+        var arr17 = new Array([2,3]);//等价于var arr16 = [2,3];
+        var arr2 = [];
+        var arr3 = [1, '大白', true, 12.13];
+        console.log(arr3);
+        console.log(arr3[2]);
+        for (var i = 0; i < arr3.length; i++) {
+            console.log(arr3[i]);
+        }
+
+        //求数组[2,6,1,7,4]里面所有元素的和以及平均值
+        var arr4 = [2, 6, 1, 7, 4], sum = 0, ave;
+        for (var i = 0; i < arr4.length; i++) {
+            sum += arr4[i];
+        }
+        ave = sum / arr4.length;
+        console.log('总和是：' + sum + '，' + '均值是：' + ave);
+
+        //求数组[2,6,1,77,52,25,7]里面的最大值
+        var arr5 = [2, 6, 1, 77, 52, 25, 7], max = arr5[0];
+        for (var i = 0; i < arr5.length; i++) {
+            if (max <= arr5[i]) {
+                max = arr5[i];
+            }
+        }
+        console.log(max);
+
+        //数组转换为字符串，并用|分割
+        var arr6 = ['red', 'green', 'blue', 'pink'], str = '';
+        for (var i = 0; i < arr6.length; i++) {
+            str += arr6[i] + '|';
+        }
+        console.log(str);
+
+        //数组新增元素
+        //1.修改数组长度
+        var arr7 = ['red', 'green', 'blue'];
+        arr7.length = 5;
+        console.log(arr7);
+        //2.修改索引号
+        arr7[3] = 'pink';
+        console.log(arr7);
+
+        //新建数组，里面存放10个整数
+        var arr8 = [];
+        for (var i = 0; i < 10; i++) {
+            arr8[i] = i + 1;
+        }
+        console.log(arr8);
+
+        //将数组[2,0,6,1,77,0,52,0,25,7]中大于10的元素选出来，放入新数组
+        //方法一：
+        var arr9 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7], arr10 = [], j = 0;
+        for (var i = 0; i < arr9.length; i++) {
+            if (10 < arr9[i]) {
+                arr10[j++] = arr9[i];
+            }
+        }
+        console.log(arr10);
+        //方法二：
+        var arr11 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7], arr12 = [];
+        for (var i = 0; i < arr11.length; i++) {
+            if (10 < arr11[i]) {
+                arr12[arr12.length] = arr11[i];
+            }
+        }
+        console.log(arr12);
+
+        //将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉，形成一个新数组
+        var arr13 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7], arr14 = [];
+        for (var i = 0; i < arr13.length; i++) {
+            if (arr13[i] !== 0) {
+                arr14[arr14.length] = arr13[i];
+            }
+        }
+        console.log(arr14);
+
+        //将数组['red', 'green', 'blue', 'pink','purple']反过来存放
+        var arr15 = ['red', 'green', 'blue', 'pink', 'purple','yellow'], temp;
+        for (var i = 0; i < arr15.length / 2; i++) {
+            temp = arr15[i];
+            arr15[i] = arr15[arr15.length - i - 1];
+            arr15[arr15.length - i - 1] = temp;
+        }
+        console.log(arr15);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

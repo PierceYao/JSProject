@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="105_动画函数的使用.js"></script>
+    <style>
+        .sliderBar {
+            right: 0;
+            top: 300px;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 35px;
+            background-color: pink;
+        }
+
+        .con {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            background-color: purple;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<div class="sliderBar">
+    <span>←</span>
+    <div class="con">问题反馈</div>
+</div>
+<script>
+    var sliderBar = document.querySelector('.sliderBar');
+    var con = document.querySelector('.con');
+    sliderBar.addEventListener('mouseenter', function () {
+        animate(con, -200, function () {
+            sliderBar.children[0].innerHTML = '→';
+        });
+    });
+    sliderBar.addEventListener('mouseleave', function () {
+        animate(con, 200, function () {
+            sliderBar.children[0].innerHTML = '←';
+        });
+    });
+</script>
+</body>
+</html>

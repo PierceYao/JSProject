@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>该段文字不可被复制</p>
+<script>
+    //1.禁止鼠标右键菜单
+    document.addEventListener('contextmenu', function (evt) {
+        evt.preventDefault();
+    })
+
+    //2.禁止鼠标选中
+    document.addEventListener('selectstart', function (evt) {
+        evt.preventDefault();
+    })
+</script>
+</body>
+</html>

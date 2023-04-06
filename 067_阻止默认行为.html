@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<a href="https://www.baidu.com/">百度</a>
+<form action="https://www.baidu.com/">
+    <input type="submit" value="提交" name="sub">
+</form>
+<script>
+    // e.type--返回事件的类型，比如click、mouseover，不带on
+    var div = document.querySelector('div');
+    div.addEventListener('click', function (evt) {
+        console.log(evt.type);
+    });
+    div.addEventListener('mouseover', function (evt) {
+        console.log(evt.type);
+    });
+    div.addEventListener('mouseout', function (evt) {
+        console.log(evt.type);
+    });
+
+    // e.preventDefault()--阻止默认事件（默认行为）--标准，如不让链接跳转
+    // e.returnValue--阻止默认事件（默认行为）--非标准，IE6-8使用，如不让链接跳转
+    var a = document.querySelector('a');
+    a.addEventListener('click', function (evt) {
+        evt.preventDefault();
+    });
+
+    a.onclick = function (evt) {
+        evt.returnValue;//低版本浏览器IE678
+        evt.preventDefault();//普通浏览器
+        return false;//不存在版本兼容问题，但是后续代码无法执行，且只限于传统注册方式
+    }
+</script>
+</body>
+</html>

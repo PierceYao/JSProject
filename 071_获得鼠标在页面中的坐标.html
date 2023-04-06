@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 9000px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    //e.clientX--返回鼠标相对于浏览器窗口可视区的X坐标
+    //e.pageX--返回鼠标相对于文档页面的X坐标 IE9+支持
+    //e.screenX--返回鼠标相对于电脑屏幕的X坐标
+    document.addEventListener('click', function (evt) {
+        console.log(evt.clientX);
+        console.log(evt.pageX);
+        console.log(evt.screenX);
+    })
+</script>
+</body>
+</html>

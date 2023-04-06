@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //如果没有参数，返回当前系统的时间
+        var date1 = new Date();
+        console.log(date1);
+
+        //参数常用的写法 2023,1,14   '2023-1-14 12:30:20'
+        var date2 = new Date(2023, 1, 14);
+        console.log(date2);
+
+        var date3 = new Date('2023-1-14 12:30:20');
+        console.log(date3);
+
+        //格式化日期  年月日
+        console.log(date1.getFullYear());
+        console.log(date1.getMonth() + 1);
+        console.log(date1.getDate());
+        console.log(date1.getDay());
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+        console.log('今天是' + date1.getFullYear() + '年' + (date1.getMonth() + 1) + '月' + date1.getDate() + '日，' + arr[date1.getDay()] + '。');
+
+        //格式化日期  时分秒
+        console.log(date1.getHours());
+        console.log(date1.getMinutes());
+        console.log(date1.getSeconds());
+
+        //封装一个函数返回当前的时分秒 格式08:08:08
+        function getTimes() {
+            var time = new Date();
+            var hour = time.getHours();
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = time.getMinutes();
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = time.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            return hour + ':' + minute + ':' + second;
+        }
+
+        console.log(getTimes());
+
+        //获取日期总的毫秒数(时间戳) 从1970-01-01起
+        //方法一：valueOf()/getTime()
+        console.log(date1.valueOf());
+        console.log(date1.getTime());
+        //方法二：最常用的写法
+        var date4 = +new Date();
+        console.log(date4);
+        //方法三：H5新增
+        console.log(Date.now());
+
+        //做一个倒计时效果
+        function countDown(time) {
+            var startTime = +new Date();
+            var endTime = +new Date(time);
+            var residualTimes = (endTime - startTime) / 1000;
+            var residualDays = Math.floor(residualTimes / 60 / 60 / 24);
+            residualDays = residualDays < 10 ? '0' + residualDays : residualDays;
+            var residualHours = Math.floor(residualTimes / 60 / 60 % 24);
+            residualHours = residualHours < 10 ? '0' + residualHours : residualHours;
+            var residualMinutes = Math.floor(residualTimes / 60 % 60);
+            residualMinutes = residualMinutes < 10 ? '0' + residualMinutes : residualMinutes;
+            var residualSeconds = Math.floor(residualTimes % 60);
+            residualSeconds = residualSeconds < 10 ? '0' + residualSeconds : residualSeconds;
+            return residualDays + '天' + residualHours + '时' + residualMinutes + '分' + residualSeconds + '秒';
+        }
+
+        console.log(countDown('2023-1-14 16:30:00'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

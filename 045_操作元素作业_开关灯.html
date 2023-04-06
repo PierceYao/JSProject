@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            margin: 300px;
+        }
+    </style>
+</head>
+<body>
+<button>关灯</button>
+<script>
+    var btn = document.querySelector('button');
+    var all = document.querySelector('*');
+    var flag = 0;
+    btn.onclick = function () {
+        if (flag === 0) {
+            all.style.backgroundColor = 'black';
+            this.innerHTML = '开灯';
+            flag = 1;
+        } else {
+            all.style.backgroundColor = 'white';
+            this.innerHTML = '关灯';
+            flag = 0;
+        }
+    }
+</script>
+</body>
+</html>

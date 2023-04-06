@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="demo">
+    <div class="box">
+        <span class="erweima">*</span>
+    </div>
+</div>
+<div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<div>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+<script>
+    //获取父节点
+    var erweima = document.querySelector('.erweima');
+    console.log(erweima.parentNode);
+
+    //获取子节点
+    var ul = document.querySelector('ul');
+    //1.childNodes获取子节点--会获取文本元素
+    console.log(ul.childNodes);
+    for (var i = 0; i < ul.childNodes.length; i++) {
+        if (ul.childNodes[i].nodeType === 1) {
+            console.log(ul.childNodes[i]);
+        }
+    }
+    //2.children获取子节点
+    console.log(ul.children);
+
+    //获取首尾元素
+    var ol = document.querySelector('ol');
+    //1.firstChild、lastChild--会获取文本元素
+    console.log(ol.parentNode.firstChild);
+    console.log(ol.parentNode.lastChild);
+    //2.firstElementChild、lastElementChild--存在版本兼容性问题
+    console.log(ol.firstElementChild);
+    console.log(ol.lastElementChild);
+    //3.实际开发中使用的方法
+    console.log(ol.children[0]);
+    console.log(ol.children[ol.children.length - 1]);
+</script>
+</body>
+</html>

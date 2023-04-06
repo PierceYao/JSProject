@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.querySelector('div');
+    var timer = setInterval(function () {
+        if (div.offsetLeft >= 400) {
+            clearInterval(timer);
+        } else {
+            div.style.left = div.offsetLeft + 100 + 'px';
+        }
+    }, 1000);
+
+</script>
+</body>
+</html>

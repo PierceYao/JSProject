@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="091_history对象_index.html">点击我去往首页</a>
+<button>后退</button>
+<script>
+    var btn = document.querySelector('button');
+    //back()--可以后退功能
+    btn.addEventListener('click', function () {
+        // history.back();
+        history.go(-1);
+    });
+</script>
+</body>
+</html>

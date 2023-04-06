@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<button id="zxy">张学友</button>
+<button id="ldh">刘德华</button>
+<img src="images/张学友.jfif" alt=""><br>
+<script>
+    var zxy = document.getElementById('zxy');
+    var ldh = document.getElementById('ldh');
+    var img = document.querySelector('img');
+    ldh.onclick = function () {
+        img.src = 'images/刘德华.jfif';
+        img.title = '刘德华';
+    }
+    zxy.onclick = function () {
+        img.src = 'images/张学友.jfif';
+        img.title = '张学友';
+    }
+</script>
+</body>
+</html>

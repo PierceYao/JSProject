@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="091_history对象_list.html">点击我去往列表页</a>
+<button>前进</button>
+<script>
+    var btn = document.querySelector('button');
+    //forward()--前进功能
+    btn.addEventListener('click', function () {
+        // history.forward();
+        history.go(1);  //go(参数)--前进后退功能。参数如果是1，前进一个页面；如果是-1，后退一个页面
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span class="hour">1</span>
+    <span class="minute">2</span>
+    <span class="second">3</span>
+</div>
+<script>
+    var hour = document.querySelector('.hour');
+    var minute = document.querySelector('.minute');
+    var second = document.querySelector('.second');
+    var endTime = +new Date('2023-1-27 18:50:00');
+    countDown();
+    setInterval(countDown, 1000);
+
+    function countDown() {
+        var startTime = +new Date();
+        var residualTimes = (endTime - startTime) / 1000;
+        var residualHours = Math.floor(residualTimes / 60 / 60 % 24);
+        residualHours = residualHours < 10 ? '0' + residualHours : residualHours;
+        hour.innerHTML = residualHours;
+        var residualMinutes = Math.floor(residualTimes / 60 % 60);
+        residualMinutes = residualMinutes < 10 ? '0' + residualMinutes : residualMinutes;
+        minute.innerHTML = residualMinutes;
+        var residualSeconds = Math.floor(residualTimes % 60);
+        residualSeconds = residualSeconds < 10 ? '0' + residualSeconds : residualSeconds;
+        second.innerHTML = residualSeconds;
+    }
+</script>
+</body>
+</html>

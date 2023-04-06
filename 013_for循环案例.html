@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //求学生成绩案例
+        var strStuNum = prompt("请输入学生的个数：");
+        var stuNum = parseInt(strStuNum), sum = 0, ave;
+        for (var i = 1; i <= stuNum; i++) {
+            var score = prompt("请输入学生" + i + "的成绩：");
+            sum += parseInt(score);
+        }
+        ave = sum / stuNum;
+        alert("班级的平均成绩是：" + ave);
+
+        //一行打印五颗星星
+        var str = '';
+        for (var i = 0; i < 5; i++) {
+            str += '*';
+        }
+        console.log(str);
+
+        //打印五行五列颗星星
+        var str = '';
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                str += '*';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        //打印m行n列星星
+        var rows = prompt("请输入行数："),cols = prompt("请输入列数：");
+        var m = parseInt(rows), n = parseInt(cols);
+        var str = '';
+        for (var i = 0; i < m; i++) {
+            for (var j = 0; j < n; j++) {
+                str += '*';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        //打印倒三角形
+        var rows = prompt("请输入行数："), cols = prompt("请输入列数：");
+        var m = parseInt(rows), n = parseInt(cols);
+        var str = '';
+        for (var i = 0; i < m; i++) {
+            for (var j = 0; j < n - i; j++) {
+                str += '*';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        //九九乘法表
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += i + '*' + j + '=' + i * j + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

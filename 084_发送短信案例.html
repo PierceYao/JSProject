@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button>发送</button>
+<script>
+    var btn = document.querySelector('button');
+    var time = 60;
+    btn.addEventListener('click', function () {
+        this.disabled = true;
+        var timer = setInterval(function () {
+            if (time === 0) {
+                clearInterval(timer);
+                btn.disabled = false;
+                btn.innerHTML = '发送';
+                time = 60;
+            } else {
+                btn.innerHTML = time + '秒后可重新获取';
+                time--;
+            }
+        }, 1000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var action = prompt('欢迎使用简易计算器：\n1.加法运算，\n2.减法运算，\n3.乘法运算，\n4.除法运算，\n5.退出。\n请输入您的选项：');
+        var strNum1, strNum2, num1, num2, result;
+        do {
+            switch (action) {
+                case '1':
+                    strNum1 = prompt('请输入数值：');
+                    strNum2 = prompt('请输入数值：');
+                    num1 = parseInt(strNum1);
+                    num2 = parseInt(strNum2);
+                    result = num1 + num2;
+                    alert('运算结果是：' + result);
+                    action = prompt('欢迎使用简易计算器：\n1.加法运算，\n2.减法运算，\n3.乘法运算，\n4.除法运算，\n5.退出。\n请输入您的选项：');
+                    break;
+                case '2':
+                    strNum1 = prompt('请输入数值：');
+                    strNum2 = prompt('请输入数值：');
+                    num1 = parseInt(strNum1);
+                    num2 = parseInt(strNum2);
+                    result = num1 - num2;
+                    alert('运算结果是：' + result);
+                    action = prompt('欢迎使用简易计算器：\n1.加法运算，\n2.减法运算，\n3.乘法运算，\n4.除法运算，\n5.退出。\n请输入您的选项：');
+                    break;
+                case '3':
+                    strNum1 = prompt('请输入数值：');
+                    strNum2 = prompt('请输入数值：');
+                    num1 = parseInt(strNum1);
+                    num2 = parseInt(strNum2);
+                    result = num1 * num2;
+                    alert('运算结果是：' + result);
+                    action = prompt('欢迎使用简易计算器：\n1.加法运算，\n2.减法运算，\n3.乘法运算，\n4.除法运算，\n5.退出。\n请输入您的选项：');
+                    break;
+                case '4':
+                    strNum1 = prompt('请输入数值：');
+                    strNum2 = prompt('请输入数值：');
+                    num1 = parseInt(strNum1);
+                    num2 = parseInt(strNum2);
+                    if (num2 === 0) {
+                        alert('输入的数值错误，请重新输入！')
+                        strNum2 = prompt('请输入数值：');
+                        num2 = parseInt(strNum2);
+                        result = num1 / num2;
+                    } else {
+                        result = num1 / num2;
+                    }
+                    alert('运算结果是：' + result);
+                    action = prompt('欢迎使用简易计算器：\n1.加法运算，\n2.减法运算，\n3.乘法运算，\n4.除法运算，\n5.退出。\n请输入您的选项：');
+                    break;
+                default:
+                    break;
+            }
+        } while (action !== '5')
+        alert('已退出简易计算器!');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

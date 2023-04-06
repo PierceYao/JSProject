@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>显示当前系统时间</button>
+<div>某个时间1</div>
+<p>某个时间2</p>
+<script>
+    //点击按钮，文字变成div中的内容
+    //1.获取元素
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+
+    //2.注册事件
+    btn.onclick = function () {
+        div.innerText = getTimes();
+    }
+
+    function getTimes() {
+        var time = new Date();
+        var hour = time.getHours();
+        hour = hour < 10 ? '0' + hour : hour;
+        var minute = time.getMinutes();
+        minute = minute < 10 ? '0' + minute : minute;
+        var second = time.getSeconds();
+        second = second < 10 ? '0' + second : second;
+        return hour + ':' + minute + ':' + second;
+    }
+
+    //3.元素也可以不用添加事件
+    var p = document.querySelector('p');
+    p.innerText = getTimes();
+
+    //4.innerText和innerHTML的区别
+    //innerText不识别html中的标签
+    div.innerText = '<strong>今天是：</strong>2023年';
+    div.innerHTML = '<strong>今天是：</strong>2023年';
+    //这两个属性是可以获取元素里面的内容的
+    console.log(p.innerText);
+    console.log(btn.innerHTML);
+</script>
+</body>
+</html>

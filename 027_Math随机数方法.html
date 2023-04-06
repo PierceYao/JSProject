@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //[0,1)
+        console.log(Math.random());
+
+        //得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+        }
+
+        console.log(getRandomIntInclusive(2, 9));
+
+        //随机点名
+        var arr = ['张三', '李四', '王五', '马六'];
+        console.log(arr[getRandomIntInclusive(0, arr.length - 1)]);
+
+        //猜数字游戏
+        var num = getRandomIntInclusive(1, 10);
+        while (1) {
+            var guessNum = prompt('请输入一个1-10之间的数字：');
+            if (guessNum > num) {
+                alert('猜大了！');
+            } else if (guessNum < num) {
+                alert('猜小了！');
+            } else {
+                alert('猜对了！');
+                break;
+            }
+        }
+
+        //猜数字游戏1-50，但只有10次机会
+        var randomNum = getRandomIntInclusive(1, 50), times = 11;
+        while (1) {
+            times--;
+            if (times === 0) {
+                break;
+            } else {
+                var giveNum = prompt('请输入一个1-50之间的数字：');
+                if (giveNum > randomNum) {
+                    alert('猜大了！');
+                } else if (giveNum < randomNum) {
+                    alert('猜小了！');
+                } else {
+                    alert('猜对了！');
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

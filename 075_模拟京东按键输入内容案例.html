@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<button>搜索</button>
+<script>
+    var ipt = document.querySelector('input');
+    document.addEventListener('keyup', function (evt) {
+        if (evt.key === 's') {
+            ipt.focus();
+        }
+    })
+</script>
+</body>
+</html>

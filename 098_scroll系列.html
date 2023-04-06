@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 3px solid blue;
+            padding: 10px 5px;
+            background-color: pink;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+    这是内容
+</div>
+<script>
+    var div = document.querySelector('div');
+    // element.scrollWidth--返回自身实际的宽度，不含边框，返回数值不带单位
+
+    // element.scrollHeight--返回自身实际的高度，不含边框，返回数值不带单位。会计算超出的内容部分的高度
+    console.log(div.scrollHeight);
+
+    // element.scrollLeft--返回被卷去的左侧距离，返回数值不带单位
+
+    // element.scrollTop--返回被卷去的上侧距离，返回数值不带单位
+    div.addEventListener('scroll', function () {
+        console.log(div.scrollTop);
+    });
+</script>
+</body>
+</html>

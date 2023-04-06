@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f1() {
+        console.log(1);
+    }
+
+    f1();
+    //立即执行函数：不需要调用，立刻能够执行的函数
+    //写法：(function() {})()或者(function(){}())
+    (function f2(a) {
+        console.log(a);
+    })(2);//第二个小括号可以看成是调用函数
+
+    (function f3(a) {
+        console.log(a)
+    }(3));
+</script>
+</body>
+</html>

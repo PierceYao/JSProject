@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box" style="width: 200px"></div>
+<script>
+    var box = document.querySelector('.box');
+    console.log(box.offsetWidth);//offset可以获得任意样式表的样式值
+    console.log(box.style.width);//style只能获得行内样式表的样式值；style.width获取的是不包含padding和border的值；style.width获取的值带px
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<script>
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function () {
+        //location.assign()--跟href一样，可以跳转页面（也称为重定向页面），因为记录历史，可以后退页面
+        location.assign('https://www.bilibili.com/');
+
+        //location.replace()--替换当前页面，因为不记录历史，所以不能后退页面
+        location.replace('https://www.bilibili.com/');
+
+        //location.reload()--重新加载页面，相当于刷新按钮或者F5。如果参数为true，强制刷新 ctrl+F5
+        location.reload();
+    });
+</script>
+</body>
+</html>

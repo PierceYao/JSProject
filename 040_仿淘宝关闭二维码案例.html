@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 40px;
+            position: relative;
+        }
+
+        .box img {
+            width: 30px;
+            right: -3px;
+            top: 3px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="images/二维码.png" alt="">
+    <i>×</i>
+</div>
+<script>
+    var div = document.querySelector('div');
+    var i = document.querySelector('i');
+    i.onclick = function () {
+        div.style.display = 'none';
+    }
+</script>
+</body>
+</html>

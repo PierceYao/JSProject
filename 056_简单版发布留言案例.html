@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea cols="30" rows="10">请输入你的留言</textarea>
+<button>发布</button>
+<ol></ol>
+<script>
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var ol = document.querySelector('ol');
+    btn.onclick = function () {
+        if (text.value === '请输入你的留言' || text.value === '') {
+            alert('请输入内容！');
+        } else {
+            var li = document.createElement('li');
+            li.innerHTML = text.value;
+            ol.insertBefore(li, ol.children[0]);
+        }
+    }
+</script>
+</body>
+</html>

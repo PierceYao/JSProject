@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //字符串对象 根据字符返回位置 str.indexOf('要查找的字符',起始的位置)
+        var str1 = '改革春风吹满地，中国人民真争气。春';
+        console.log(str1.indexOf('春'));
+        console.log(str1.indexOf('春', 5));
+
+        //返回字符位置：查找字符串'abcoefoxyozzopp'中所有o位置以及次数
+        var str2 = 'abcoefoxyozzopp', count = 0;
+        for (var i = 0; i < str2.length; i++) {
+            if (str2[i] === 'o') {
+                console.log(str2.indexOf('o', i++));
+                count++;
+            }
+        }
+        console.log(count);
+
+        //根据位置返回字符
+        //1.charAt(index) 根据位置返回字符
+        var letter = str2.charAt(12);
+        console.log(letter);
+        //遍历所有的字符
+        for (var i = 0; i < str2.length; i++) {
+            console.log(str2.charAt(i));
+        }
+        //2.charCodeAt(index) 根据位置返回ASCII字符  目的：判断用户按下了哪个键
+        var letterASCII = str2.charCodeAt(2);
+        console.log(letterASCII);
+        //3.str[index]  H5新增
+        var element = str2[5];
+        console.log(element);
+
+        //找出字符串'abcoefoxyozzopp'中出现次数最多的字符以及次数
+        var obj = {}, num = 0;
+        for (var i = 0; i < str2.length; i++) {
+            var chars = str2.charAt(i);
+            if (obj[chars]) {
+                obj[chars]++;
+                num++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        // console.log(obj);
+        var maxTimes = 0, maxLetter;
+        for (var objKey in obj) {
+            if (obj[objKey] > maxTimes) {
+                maxTimes = obj[objKey];
+                maxLetter = objKey;
+            }
+        }
+        console.log(maxLetter);
+        console.log(maxTimes);
+
+        //字符串拼接 concat(str1,str2,str3)
+        var str3 = 'Jack';
+        var str4 = str3.concat('and', 'Rose');
+        console.log(str4);
+
+        //substring[截取的起始位置,截取的终止位置)
+        var str5 = '改革春风吹满地';
+        var substr = str5.substring(2, 5);
+        console.log(substr);
+
+        //替换字符 replace('被替换的字符','替换为的字符') 只替换第一个
+        console.log(str4.replace('a', 'b'));
+        //将字符串'abcoefoxyozzopp'中所有o换成*
+        //方法一：
+        var str6 = [];
+        for (var i = 0; i < str2.length; i++) {
+            if (str2[i] === 'o') {
+                str6[i] = str2[i].replace('o', '*');
+            } else {
+                str6[i] = str2[i];
+            }
+        }
+        console.log(str6.join(''));
+        //方法二：
+        while (str2.indexOf('o') !== -1) {
+            str2 = str2.replace('o', '*');
+        }
+        console.log(str2);
+
+        //字符转换为数组 split('分割符')
+        var str7 = 'red, blue, pink';
+        console.log(str7.split(','));
+
+        //字符转换大小写
+        var str8 = 'dom-bom-js-es6';
+        console.log(str8.toUpperCase());
+        var str9 = 'DOM-BOM-JS-ES6';
+        console.log(str9.toLowerCase());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

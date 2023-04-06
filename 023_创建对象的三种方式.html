@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.利用对象字面量创建对象
+        var man = {
+            name: 'Jack',
+            gender: 'male',
+            age: 21,
+            sayHi: function () {
+                console.log('Hi!');
+            }
+        }
+        console.log(man.name);
+        console.log(man['age']);
+        man.sayHi();
+
+        //2.利用new Object创建对象
+        var person = new Object();
+        person.name = 'Rose';
+        person.gender = 'male';
+        person.age = 17;
+        person.sayHello = function () {
+            console.log('Hello!');
+        }
+
+        //3.构造函数创建对象
+        function FourStars(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+
+        var star1 = new FourStars('刘德华', 59, '男');
+        console.log(star1.name);
+        star1.sing('冰雨');
+
+        //遍历对象 for(变量 in 对象){}
+        for (var manKey in man) {
+            console.log(manKey);//输出属性名
+            console.log(man[manKey]);//输出属性值
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

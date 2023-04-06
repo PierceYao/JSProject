@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="btn1">传统注册事件</button>
+<button class="btn2">addEventListener方法监听注册事件</button>
+<button class="btn3">方法监听注册事件</button>
+<script>
+    //传统注册事件--具有唯一性
+    var btn1 = document.querySelector('.btn1');
+    btn1.onclick = function () {
+        alert('hi!');
+    }
+    btn1.onclick = function () {
+        alert('how are you?');
+    }
+
+    //addEventListener方法监听注册事件
+    var btn2 = document.querySelector('.btn2');
+    btn2.addEventListener('click', function () {
+        alert('hello!');
+    });
+    btn2.addEventListener('click', function () {
+        alert('nice to meet you!');
+    });
+
+    //attachEvent方法监听注册事件--仅IE9以前的版本支持
+    var btn3 = document.querySelector('.btn3');
+    btn3.attachEvent('onclick', function () {
+        alert("it's glad to see you!");
+    });
+
+    //注册事件兼容性解决方案
+    function addEventListener(element, eventName, fn) {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, fn);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + eventName, fn);
+        } else {
+            element['on' + eventName] = fn;
+        }
+    }
+</script>
+</body>
+</html>

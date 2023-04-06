@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //检测是否为数组的两种方式
+        //1.instanceof
+        var arr1 = [];
+        var obj = {};
+        console.log(arr1 instanceof Array);
+        console.log(obj instanceof Array);
+        //2.Array.isArray()
+        console.log(Array.isArray(arr1));
+        console.log(Array.isArray(obj));
+
+        //在数组末尾添加元素
+        var arr2 = [1, 2, 3];
+        var len1 = arr2.push(4, 'Jack');
+        console.log(len1);//返回新数组的长度
+        console.log(arr2);
+
+        //在数组末尾添加元素
+        var arr3 = [1, 2, 3];
+        var len2 = arr3.unshift(0, 'Tom');
+        console.log(len2);//返回新数组的长度
+        console.log(arr3);
+
+        //删除数组的最后一个元素
+        var arr4 = [1, 2, 3];
+        var element1 = arr4.pop();
+        console.log(element1);//返回删除的元素
+        console.log(arr4);
+
+        //删除数组的第一个元素
+        var arr5 = [1, 2, 3];
+        var element2 = arr5.shift();
+        console.log(element2);//返回删除的元素
+        console.log(arr5);
+
+        //删除数组[1500,1200,2000,2100,1800]中高于2000的，并放入新数组中
+        var arr6 = [1500, 1200, 2000, 2100, 1800], arr7 = [];
+        for (var i = 0; i < arr6.length; i++) {
+            if (2000 > arr6[i]) {
+                arr7.push(arr6[i]);
+            }
+        }
+        console.log(arr7);
+
+        //反转数组
+        var arr8 = ['red', 'green', 'blue', 'pink', 'purple', 'yellow'];
+        arr8.reverse();
+        console.log(arr8);
+
+        //冒泡排序
+        var arr9 = [2, 6, 1, 77, 52, 25, 7];
+        arr9.sort(function (a, b) {
+            return a - b;//a-b升序 b-a降序
+        });
+        console.log(arr9);
+
+        //返回数组元素索引号
+        var arr10 = ['red', 'green', 'blue', 'pink', 'purple', 'yellow', 'pink'];
+        console.log(arr10.indexOf('pink'));
+        console.log(arr10.lastIndexOf('pink'));
+
+        //数组去重案例
+        var arr11 = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'], arr12 = [];
+        for (var i = 0; i < arr11.length; i++) {
+            if (arr12.indexOf(arr11[i]) === -1) {
+                arr12.push(arr11[i]);
+            }
+        }
+        console.log(arr12);
+
+        //数组转换为字符串
+        //1.toString() 将数组转换为字符串
+        var arr13 = [1, 2, 3];
+        console.log(arr13.toString());
+        //2.join('分割符')
+        var arr14 = ['red', 'green', 'blue'];
+        console.log(arr14.join());//,
+        console.log(arr14.join('-'));//-
+        console.log(arr14.join('&'));//&
+
+        //连接两个或者多个数组，不影响原数组，返回一个新数组 concat()
+        var arr15 = arr13.concat(arr12, arr14);
+        console.log(arr15);
+
+        //数组截取slice[begin,end)，返回被截取项目的新数组
+        const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+        console.log(animals.slice(2));//["camel", "duck", "elephant"]  [2,---
+        console.log(animals.slice(2, 4));//["camel", "duck"]
+        console.log(animals.slice(-2));//["duck", "elephant"]  ---,-2]
+
+        //splice(第几个开始,要删除的个数)方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        console.log(months);//["Jan", "Feb", "March", "April", "June"]
+
+        months.splice(4, 1, 'May');
+        console.log(months);//["Jan", "Feb", "March", "April", "May"]
+    </script>
+</head>
+<body>
+
+</body>
+</html>
